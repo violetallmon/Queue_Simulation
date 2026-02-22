@@ -1,35 +1,33 @@
 /***************************************************************
   Student Name: Violet Allmon
-  File Name: PriorityQueue.cpp
+  File Name: FIFOQueue.cpp
   Project 2
 
-  PriorityQueue class definition. This class will be used to create 
-  a priority queue of customer objects. The priority queue will be 
-  implemented using a linked list, where each node in the list will 
+  FIFOQueue class definition. This class will be used to create a 
+  first-in-first-out queue of customer objects. The FIFO queue will be 
+  implemented using a linked list, where each node in the list will
   contain a pointer to a customer object and a pointer to the next 
-  node in the list. The priority queue will be ordered based on the 
-  arrival time of the customers, with the customer that has the 
+  node in the list. The FIFO queue will be ordered based on the
+  arrival time of the customers, with the customer that has the
   earliest arrival time being at the front of the queue.
-***************************************************************/
-
-#include "PriorityQueue.hpp"
+*****************************************************************/
+#include "FIFOQueue.hpp"
 #include <iostream>
 using namespace std;
-
-PQ::PQ()
+FIFOQ::FIFOQ()
 {
     head = nullptr;
     tail = nullptr;
     size = 0;
 }
-PQ::~PQ()
+FIFOQ::~FIFOQ()
 {
     while (!isEmpty())
     {
         dequeue();
     }
 }
-void PQ::enqueue(Customer * newCustomer)
+void FIFOQ::enqueue(Customer * newCustomer)
 {
     if(size >= 200)
     {
@@ -48,7 +46,7 @@ void PQ::enqueue(Customer * newCustomer)
     }
     size++;
 }
-Customer * PQ::dequeue()
+Customer * FIFOQ::dequeue()
 {
     if (isEmpty())
     {
@@ -62,11 +60,11 @@ Customer * PQ::dequeue()
         return temp;
     }
 }
-bool PQ::isEmpty()
+bool FIFOQ::isEmpty()
 {
     return size == 0;
 }
-int PQ::getSize()
+int FIFOQ::getSize()
 {
     return size;
 }
