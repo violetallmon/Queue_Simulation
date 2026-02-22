@@ -16,11 +16,36 @@ using namespace std;
 
 class Customer
 {
-    float arrivalTime;
-    float startOfServiceTime;
-    float departureTime;
-    float pqTime;
-    Customer * nextCust; //pointer to the next customer in the queue
+    public:
+        float arrivalTime;
+        float startOfServiceTime;
+        float departureTime;
+        float pqTime;
+        Customer * nextCust; //pointer to the next customer in the queue
+        Customer(float arrivalTime)
+        {
+            this->arrivalTime = arrivalTime;
+            this->startOfServiceTime = 0;
+            this->departureTime = 0;
+            this->pqTime = 0;
+            this->nextCust = nullptr;
+        }
+        void setStartOfServiceTime(float startOfServiceTime)
+        {
+            this->startOfServiceTime = startOfServiceTime;
+        }
+        void setDepartureTime(float departureTime)
+        {
+            this->departureTime = departureTime;
+        }
+        void setPQTime(float pqTime)
+        {
+            this->pqTime = pqTime;
+        }
+        float getPQTime()
+        {
+            return pqTime;
+        }
 };
 
 #endif
