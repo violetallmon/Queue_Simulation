@@ -37,7 +37,6 @@ class MathSim
         MathSim(); //constructor
         float factorial(int n); //function to calculate the factorial of a number
         void runSimulation(string filename); //function to run the simulation
-        void processCustomer(Customer * customer); //function to process a customer
         void printResults(); //function to print the results of the simulation
         void calculateResults(); //function to calculate the results of the simulation
         void calculatePercentIdleTime(); //function to calculate the percentage of time the tellers are

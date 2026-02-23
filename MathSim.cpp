@@ -151,10 +151,6 @@ void MathSim::runSimulation(string filename)
     }
 }
 
-void MathSim::processCustomer(Customer * customer)
-{
-    //code to process a customer will go here
-}
 void MathSim::printResults()
 {
     //code to print the results of the simulation will go here
