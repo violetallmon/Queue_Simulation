@@ -1,3 +1,13 @@
+/***************************************************************
+  Student Name: Violet Allmon
+  File Name: MathSim.hpp
+  Project 2
+
+    MathSim class definition. This class will be used to run the
+    simulation of the bank tellers and customers. The MathSim class will
+    contain the main simulation loop, as well as functions to calculate
+    the results of the simulation and print them to the console.
+ ***************************************************************/
 #ifndef MathSim_HPP
 #define MathSim_HPP
 #include "Customer.hpp"
@@ -15,7 +25,7 @@ class MathSim
         float avgTimeInSystem; //average time a customer spends in the system
         float avgNumInQueue; //average number of customers in the queue
         float avgTimeInQueue; //average time a customer spends in the queue
-        float utilFactor; //utilization factor of the tellers
+        float rho; //utilization factor of the tellers
 
     public:
         int lambda; //average number of customers arriving per unit time
@@ -26,7 +36,7 @@ class MathSim
    
         MathSim(); //constructor
         float factorial(int n); //function to calculate the factorial of a number
-        void runSimulation(); //function to run the simulation
+        void runSimulation(string filename); //function to run the simulation
         void processCustomer(Customer * customer); //function to process a customer
         void printResults(); //function to print the results of the simulation
         void calculateResults(); //function to calculate the results of the simulation
@@ -36,6 +46,7 @@ class MathSim
         void calculateAvgNumInQueue(); //function to calculate the average number of customers in the queue
         void calculateAvgTimeInQueue(); //function to calculate the average time a customer spends in the queue
         void calculateUtilFactor(); //function to calculate the utilization factor of the tellers
+        float getNextRandomInterval(float avg); //function to get the next random interval for customer arrivals and service times
 };
 
 #endif

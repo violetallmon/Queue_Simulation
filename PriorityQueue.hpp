@@ -20,17 +20,18 @@
     class PQ
     {
         private:
-            Customer * head; //pointer to the first customer in the queue
-            Customer * tail; //pointer to the last customer in the queue
-            int size; //number of customers in the queue
+            Customer* heap[201]; //array to store the customers in the priority queue
+            int size; //number of customers in the priority queue
+            void bubbleUp(int index); //function to maintain the heap property after adding a new customer
+            void bubbleDown(int index); //function to maintain the heap property after removing a customer
 
         public:
             PQ(); //constructor
             ~PQ(); //destructor
-            void enqueue(Customer * newCustomer); //function to add a customer to the queue
-            Customer * dequeue(); //function to remove a customer from the queue
-            bool isEmpty(); //function to check if the queue is empty
-            int getSize(); //function to get the number of customers in the queue
+            void enqueue(Customer* newCustomer); //function to add a customer to the priority queue
+            Customer* dequeue(); //function to remove a customer from the priority queue
+            bool isEmpty(); //function to check if the priority queue is empty
+            int getSize(); //function to get the number of customers in the priority queue
     };
 
     #endif

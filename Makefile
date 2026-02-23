@@ -9,10 +9,10 @@ RM_CMD := rm -f
 endif
 
 CXX := g++
-CXXFLAGS := -std=c++11 -Wall -O1 -static-libstdc++
+CXXFLAGS := -std=c++11 -Wall -O0 -fno-lto
 
-SRCS := $(wildcard *.cpp)
-OBJS := $(SRCS:.cpp=.o)
+SRCS := FIFOQueue.cpp PriorityQueue.cpp MathSim.cpp main.cpp Customer.hpp
+OBJS := $(filter %.o,$(SRCS:.cpp=.o))
 TARGET := mathsim$(EXEEXT)
 
 all: $(TARGET)
